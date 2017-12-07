@@ -80,7 +80,6 @@ namespace Heap
             Veri[ES - 1] = e;
             HeapifyUp(ES - 1);
             return true;
-
         }
 
         void HeapifyDown(int i)
