@@ -1,6 +1,10 @@
 ﻿//Berat Göktuğ ÖZDEMİR
 //150101002
-
+//Ek Özellikler
+//Kullanıcı çekeceği miktarı kendisi belirleyebiliyor. 
+//Çıkış yaparken gerçek yazılımlar gibi ... yüklenme simgesi gibi yavaş yavaş ekleniyor.
+//Çıkış yaptığında gerçek ATM gibi ekranı temizliyor.
+//Ekran renklerini atmlerdeki gibi değiştirdim.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +33,9 @@ namespace ATMCaseStudy
 
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
             ATM atm = new ATM();
             atm.Run();
         }

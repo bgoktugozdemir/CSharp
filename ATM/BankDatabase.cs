@@ -34,11 +34,9 @@
             GetAccount(userAccountNumber).Debit(amount);
         }
 
-        public void Save(int userAccountNumber, decimal amount)
-        {
-            GetAccount(userAccountNumber).AvailableBalance -= amount;
-            GetAccount(userAccountNumber).TotalBalance -= amount;
-        }
+        public void SaveDeposit() { 
+}
+        
 
         public Account GetAccount(int userAccountNumber)
         {
@@ -48,6 +46,16 @@
                     return item;
             }
             return null;
+        }
+
+        public int FindAccount(int userAccountNumber)
+        {
+            for (int i = 0; i < accounts.Length; i++)
+            {
+                if (userAccountNumber == accounts[i].AccountNumber)
+                    return i;
+            }
+            return -1;
         }
 
         public decimal getAvailableBalance(int userAccountNumber)

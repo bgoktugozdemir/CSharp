@@ -19,7 +19,7 @@
 
             int[] amounts = { 0, 10, 20, 30, 40, 50, 100 };
 
-            while (Choice == 0)
+            do
             {
                 UserScreen.DisplayMessageLine("\nWithdrawal Menu:");
                 UserScreen.DisplayMessageLine("1 - $10");
@@ -63,9 +63,10 @@
                         break;
                     default:
                         UserScreen.DisplayMessageLine("\nInvalid selection. Try again.");
+                        Choice = -1;
                         break;
                 }
-            }
+            } while (Choice < 0);
                 return Choice;
         }
 
@@ -74,7 +75,7 @@
             bool cashDispensed = false;
             decimal availableBalance;
 
-            BankDatabase bankDatabase = new BankDatabase();
+            BankDatabase bankDatabase = database;
             Screen screen = new Screen();
 
             do
@@ -91,9 +92,7 @@
 
                         cashDispenser.DispenseCash(amount);
                         cashDispensed = true;
-
-                        bankDatabase.Save(AccountNumber, amount);
-
+                    
                         screen.DisplayMessageLine("\nYour cash has been dispensed. Please take your cash now.");
                     }
                     else
@@ -101,7 +100,7 @@
                 }
                 else
                 {
-                    screen.DisplayMessageLine("\nCancelling transaction...");
+                    screen.DisplayMessageLine("\nCanceling transaction...");
                     return;
                 }
             } while (!cashDispensed);

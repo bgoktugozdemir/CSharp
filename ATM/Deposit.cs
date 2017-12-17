@@ -40,6 +40,7 @@
                         "enclosed cash, and any enclosed checks clear.");
 
                     Database.Credit(AccountNumber, amount);
+                    Database.Debit(AccountNumber, amount);
                 }
                 else
                     UserScreen.DisplayMessageLine(
@@ -59,7 +60,7 @@
             if (input == CANCELED)
                 return CANCELED;
             else
-                return input / 100.00M;
+                return input;
         }
     }
 }

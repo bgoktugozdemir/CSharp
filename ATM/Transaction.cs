@@ -10,7 +10,7 @@ namespace ATMCaseStudy
     {
         private int accountNumber;
         private Screen userScreen;
-        private BankDatabase database;
+        protected BankDatabase database;
 
         public Transaction(int userAccount, Screen theScreen, BankDatabase theDatabase)
         {

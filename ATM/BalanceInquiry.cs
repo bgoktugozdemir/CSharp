@@ -9,7 +9,7 @@
 
         public override void Execute()
         {
-            BankDatabase bankDatabase = new BankDatabase();
+            BankDatabase bankDatabase = database;
 
             var AvailableBalance = bankDatabase.getAvailableBalance(AccountNumber);
             var TotalBalance = bankDatabase.getTotalBalance(AccountNumber);
