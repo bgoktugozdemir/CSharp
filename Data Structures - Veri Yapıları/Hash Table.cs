@@ -114,7 +114,7 @@ namespace HashTable
 
             if (Veri[mod].pSonraki == null)
             {
-                if (Veri[mod].pSonraki.Anahtar == Anahtar)
+                if (Veri[mod].Anahtar == Anahtar)
                 {
                     Veri[mod] = null;
                     return true;
