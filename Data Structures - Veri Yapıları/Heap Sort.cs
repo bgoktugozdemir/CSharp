@@ -125,7 +125,7 @@ namespace Heap
                 int swap = Veri[i];
                 Veri[i] = Veri[eb];
                 Veri[eb] = swap;
-                HeapifyUp(i);
+                HeapifyUp(eb);
             }
         }
 
